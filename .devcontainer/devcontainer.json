@@ -1,0 +1,15 @@
+{
+  "name": "Rust Server",
+  "dockerComposeFile": ["../compose.yaml", "compose.override.yaml"],
+  "service": "backend",
+  "workspaceFolder": "/app",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rust-lang.rust",
+        "vadimcn.vscode-lldb",
+        "GitHub.copilot"
+      ]
+    }
+  }
+}
