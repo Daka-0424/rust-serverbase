@@ -496,6 +496,7 @@ name = "server-controller"
 version = "0.1.0"
 dependencies = [
  "axum",
+ "serde_json",
  "server-domain",
  "server-infra",
  "server-usecase",

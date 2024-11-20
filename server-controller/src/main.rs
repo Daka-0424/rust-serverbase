@@ -1,9 +1,13 @@
-use axum::{Router, routing::get, response::Html};
+use axum::{Router};
+
+use server_controller::router::api::create_api_router;
 
 #[tokio::main]
 async fn main() {
+    let api = create_api_router().await;
+
     let app = Router::new()
-        .route("/", get(handler));
+        .nest("/", api);
 
     let listener = tokio::net::TcpListener::bind("0.0.0.0:8080")
         .await
@@ -12,8 +16,4 @@ async fn main() {
     axum::serve(listener, app)
         .await
         .unwrap();
-}
-
-async fn handler() -> Html<&'static str> {
-    Html("<h1>Hello, world!</h1>")
 }
