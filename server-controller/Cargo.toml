@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+server-config = { path = "../server-config" }
 server-domain = { path = "../server-domain" }
 server-infra = { path = "../server-infra" }
 server-usecase = { path = "../server-usecase" }
