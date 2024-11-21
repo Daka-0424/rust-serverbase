@@ -1,6 +1,7 @@
 use axum::{Router};
 
 use server_config::config::Config;
+use server_infra::db_conn::db_connection;
 use server_infra::redis_conn::redis_connection;
 use server_controller::router::api::create_api_router;
 
@@ -8,6 +9,7 @@ use server_controller::router::api::create_api_router;
 async fn main() {
     let config = Config::new().await;
     
+    let db_conn = db_connection(&config.db_conn).await.unwrap();
     let redis_conn = redis_connection(&config.redis_conn).await.unwrap();
 
     let api = create_api_router().await;
