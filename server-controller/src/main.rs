@@ -1,12 +1,14 @@
 use axum::{Router};
 
+use server_config::config::Config;
 use server_infra::redis_conn::redis_connection;
 use server_controller::router::api::create_api_router;
 
 #[tokio::main]
 async fn main() {
-    let redis_url = "redis://127.0.0.1:6379/";
-    let redis_conn = redis_connection(redis_url).await.unwrap();
+    let config = Config::new().await;
+    
+    let redis_conn = redis_connection(&config.redis_conn).await.unwrap();
 
     let api = create_api_router().await;
 

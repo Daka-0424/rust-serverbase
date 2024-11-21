@@ -1,6 +1,10 @@
 [workspace]
 
 members = [
-  "server-*"
+  "server-config",
+  "server-controller",
+  "server-domain",
+  "server-infra",
+  "server-usecase",
 ]
 resolver = "2"

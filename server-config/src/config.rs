@@ -2,6 +2,7 @@ use dotenv::dotenv;
 use std::env;
 
 pub struct Config {
+  pub db_conn: String,
   pub redis_conn: String,
 }
 
@@ -10,10 +11,11 @@ impl Config {
     // .env ファイルをロード
     dotenv().ok();
 
-    // 環境変数 REDIS_CONN を取得（デフォルト値を設定可能）
-    let redis_conn = env::var("REDIS_CONN").unwrap_or_else(|_| "redis://127.0.0.1:6379/".to_string());
+    let db_conn = env::var("DB_CONN").unwrap_or_else(|_| "mysql://root:pass@localhost:3306/appdb".to_string());
+    let redis_conn = env::var("REDIS_CONN").unwrap_or_else(|_| "redis://localhost:6379/".to_string());
 
     Self {
+      db_conn,
       redis_conn,
     }
   }

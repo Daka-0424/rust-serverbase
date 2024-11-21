@@ -4,6 +4,7 @@ WORKDIR /app
 
 ENV TZ=Asia/Tokyo
 
+RUN cargo install cargo-edit
 RUN cargo install sea-orm-cli
 
 COPY .. ./
