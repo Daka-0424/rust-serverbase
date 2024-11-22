@@ -1,10 +1,11 @@
 [workspace]
 
 members = [
-  "server-config",
-  "server-controller",
-  "server-domain",
-  "server-infra",
-  "server-usecase",
+  "cmd",
+  "config",
+  "controller",
+  "domain",
+  "infra",
+  "usecase",
 ]
 resolver = "2"

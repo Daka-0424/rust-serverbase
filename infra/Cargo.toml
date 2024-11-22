@@ -1,10 +1,10 @@
 [package]
-name = "server-infra"
+name = "infra"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-server-domain = { path = "../server-domain" }
-sea-orm = { version = "0.11.3", features = [ "sqlx-mysql", "runtime-async-std-native-tls", "macros" ] }
+domain = { path = "../domain" }
+sea-orm = { version = "0.11.3", features = [ "sqlx-mysql", "runtime-tokio-native-tls", "macros" ] }
 tokio = { version = "1.41.1", features = ["full"] }
 redis = { version = "0.27.5", features = ["aio", "tokio-comp"] }

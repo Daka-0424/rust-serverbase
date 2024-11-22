@@ -1,7 +1,7 @@
 use std::sync::Arc;
 
-use server_config::config::Config;
-use server_infra::redis_conn::redis_connection;
+use config::config::Config;
+use infra::redis_conn::redis_connection;
 
 pub mod Modules{
   Config,

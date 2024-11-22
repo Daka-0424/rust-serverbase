@@ -1,7 +1,0 @@
-[package]
-name = "server-domain"
-version = "0.1.0"
-edition = "2021"
-
-[dependencies]
-sea-orm = { version = "0.11.3", features = [ "sqlx-mysql", "runtime-async-std-native-tls", "macros" ] }

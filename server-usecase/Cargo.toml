@@ -1,7 +1,0 @@
-[package]
-name = "server-usecase"
-version = "0.1.0"
-edition = "2021"
-
-[dependencies]
-server-domain = { path = "../server-domain" }

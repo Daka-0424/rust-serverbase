@@ -11,7 +11,7 @@ impl Config {
     // .env ファイルをロード
     dotenv().ok();
 
-    let db_conn = env::var("DB_CONN").unwrap_or_else(|_| "mysql://root:pass@localhost:3306/appdb".to_string());
+    let db_conn = env::var("DATABASE_URL").unwrap_or_else(|_| "mysql://root:pass@localhost:3306/appdb".to_string());
     let redis_conn = env::var("REDIS_CONN").unwrap_or_else(|_| "redis://localhost:6379/".to_string());
 
     Self {
